@@ -1,6 +1,22 @@
-import { RouteParams } from '~/types/routes';
+import { ParentRouteParams } from '~/types/routes';
 
-export const DESSERT_AND_PASTRIES: RouteParams = {
+export enum DESSERT_AND_PASTRIES_CHILD_KEY {
+    PANCAKES_AND_FRITTERS = 'PANCAKES_AND_FRITTERS',
+    PIES_AND_DONUTS = 'PIES_AND_DONUTS',
+    CAKES = 'CAKES',
+    ROLLS = 'ROLLS',
+    CUPCAKES_AND_MUFFINS = 'CUPCAKES_AND_MUFFINS',
+    CHEESECAKES_AND_VATRUSHKI = 'CHEESECAKES_AND_VATRUSHKI',
+    PUFF_PASTRY = 'PUFF_PASTRY',
+    CHOUX_PASTRY = 'CHOUX_PASTRY',
+    YEAST_DOUGH = 'YEAST_DOUGH',
+    BUNS_AND_PASTRIES = 'BUNS_AND_PASTRIES',
+    BREAD = 'BREAD',
+    PIZZA_DOUGH = 'PIZZA_DOUGH',
+    CREAMS = 'CREAMS',
+}
+
+export const DESSERT_AND_PASTRIES: ParentRouteParams<DESSERT_AND_PASTRIES_CHILD_KEY> = {
     url: `/dessert-and-pastries`,
     crumbs: {
         ru: 'Десерты и выпечка',
@@ -8,9 +24,9 @@ export const DESSERT_AND_PASTRIES: RouteParams = {
     nameInMenu: {
         ru: 'Десерты и выпечка',
     },
-    children: [
-        {
-            url: '',
+    children: {
+        [DESSERT_AND_PASTRIES_CHILD_KEY.PANCAKES_AND_FRITTERS]: {
+            url: '/pancakes-and-fritters',
             crumbs: {
                 ru: 'Блины и оладьи',
             },
@@ -18,8 +34,8 @@ export const DESSERT_AND_PASTRIES: RouteParams = {
                 ru: 'Блины и оладьи',
             },
         },
-        {
-            url: '',
+        [DESSERT_AND_PASTRIES_CHILD_KEY.PIES_AND_DONUTS]: {
+            url: '/pies-and-donuts',
             crumbs: {
                 ru: 'Пироги и пончики',
             },
@@ -27,8 +43,8 @@ export const DESSERT_AND_PASTRIES: RouteParams = {
                 ru: 'Пироги и пончики',
             },
         },
-        {
-            url: '',
+        [DESSERT_AND_PASTRIES_CHILD_KEY.CAKES]: {
+            url: '/cakes',
             crumbs: {
                 ru: 'Торты',
             },
@@ -36,8 +52,8 @@ export const DESSERT_AND_PASTRIES: RouteParams = {
                 ru: 'Торты',
             },
         },
-        {
-            url: '',
+        [DESSERT_AND_PASTRIES_CHILD_KEY.ROLLS]: {
+            url: '/rolls',
             crumbs: {
                 ru: 'Рулеты',
             },
@@ -45,8 +61,8 @@ export const DESSERT_AND_PASTRIES: RouteParams = {
                 ru: 'Рулеты',
             },
         },
-        {
-            url: '',
+        [DESSERT_AND_PASTRIES_CHILD_KEY.CUPCAKES_AND_MUFFINS]: {
+            url: '/cupcakes-and-muffins',
             crumbs: {
                 ru: 'Кексы и маффины',
             },
@@ -54,8 +70,8 @@ export const DESSERT_AND_PASTRIES: RouteParams = {
                 ru: 'Кексы и маффины',
             },
         },
-        {
-            url: '',
+        [DESSERT_AND_PASTRIES_CHILD_KEY.CHEESECAKES_AND_VATRUSHKI]: {
+            url: '/cheesecakes-and-vatrushki',
             crumbs: {
                 ru: 'Сырники и ватрушки',
             },
@@ -63,8 +79,8 @@ export const DESSERT_AND_PASTRIES: RouteParams = {
                 ru: 'Сырники и ватрушки',
             },
         },
-        {
-            url: '',
+        [DESSERT_AND_PASTRIES_CHILD_KEY.PUFF_PASTRY]: {
+            url: '/puff-pastry',
             crumbs: {
                 ru: 'Из слоеного теста',
             },
@@ -72,8 +88,8 @@ export const DESSERT_AND_PASTRIES: RouteParams = {
                 ru: 'Из слоеного теста',
             },
         },
-        {
-            url: '',
+        [DESSERT_AND_PASTRIES_CHILD_KEY.CHOUX_PASTRY]: {
+            url: '/choux-pastry',
             crumbs: {
                 ru: 'Из заварного теста',
             },
@@ -81,8 +97,8 @@ export const DESSERT_AND_PASTRIES: RouteParams = {
                 ru: 'Из заварного теста',
             },
         },
-        {
-            url: '',
+        [DESSERT_AND_PASTRIES_CHILD_KEY.YEAST_DOUGH]: {
+            url: '/yeast-dough',
             crumbs: {
                 ru: 'Из дрожжевого теста',
             },
@@ -90,8 +106,8 @@ export const DESSERT_AND_PASTRIES: RouteParams = {
                 ru: 'Из дрожжевого теста',
             },
         },
-        {
-            url: '',
+        [DESSERT_AND_PASTRIES_CHILD_KEY.BUNS_AND_PASTRIES]: {
+            url: '/buns-and-pastries',
             crumbs: {
                 ru: 'Булочки и сдоба',
             },
@@ -99,8 +115,8 @@ export const DESSERT_AND_PASTRIES: RouteParams = {
                 ru: 'Булочки и сдоба',
             },
         },
-        {
-            url: '',
+        [DESSERT_AND_PASTRIES_CHILD_KEY.BREAD]: {
+            url: '/bread',
             crumbs: {
                 ru: 'Хлеб',
             },
@@ -108,8 +124,8 @@ export const DESSERT_AND_PASTRIES: RouteParams = {
                 ru: 'Хлеб',
             },
         },
-        {
-            url: '',
+        [DESSERT_AND_PASTRIES_CHILD_KEY.PIZZA_DOUGH]: {
+            url: '/pizza-dough',
             crumbs: {
                 ru: 'Тесто на пиццу',
             },
@@ -117,8 +133,8 @@ export const DESSERT_AND_PASTRIES: RouteParams = {
                 ru: 'Тесто на пиццу',
             },
         },
-        {
-            url: '',
+        [DESSERT_AND_PASTRIES_CHILD_KEY.CREAMS]: {
+            url: '/creams',
             crumbs: {
                 ru: 'Кремы',
             },
@@ -126,5 +142,5 @@ export const DESSERT_AND_PASTRIES: RouteParams = {
                 ru: 'Кремы',
             },
         },
-    ],
+    },
 };

@@ -1,6 +1,15 @@
-import { RouteParams } from '~/types/routes';
+import { ParentRouteParams } from '~/types/routes';
 
-export const GRILLED_DISHES: RouteParams = {
+export enum GRILLED_DISHES_CHILD_KEY {
+    BEEF = 'BEEF',
+    PORK = 'PORK',
+    BIRD = 'BIRD',
+    FISH = 'FISH',
+    MUSHROOMS = 'MUSHROOMS',
+    VEGETABLES = 'VEGETABLES',
+}
+
+export const GRILLED_DISHES: ParentRouteParams<GRILLED_DISHES_CHILD_KEY> = {
     url: '/grilled-dishes',
     crumbs: {
         ru: 'Блюда на гриле',
@@ -8,9 +17,9 @@ export const GRILLED_DISHES: RouteParams = {
     nameInMenu: {
         ru: 'Блюда на гриле',
     },
-    children: [
-        {
-            url: '',
+    children: {
+        [GRILLED_DISHES_CHILD_KEY.BEEF]: {
+            url: '/beef',
             crumbs: {
                 ru: 'Говядина',
             },
@@ -18,8 +27,8 @@ export const GRILLED_DISHES: RouteParams = {
                 ru: 'Говядина',
             },
         },
-        {
-            url: '',
+        [GRILLED_DISHES_CHILD_KEY.PORK]: {
+            url: '/pork',
             crumbs: {
                 ru: 'Свинина',
             },
@@ -27,8 +36,8 @@ export const GRILLED_DISHES: RouteParams = {
                 ru: 'Свинина',
             },
         },
-        {
-            url: '',
+        [GRILLED_DISHES_CHILD_KEY.BIRD]: {
+            url: '/bird',
             crumbs: {
                 ru: 'Птица',
             },
@@ -36,8 +45,8 @@ export const GRILLED_DISHES: RouteParams = {
                 ru: 'Птица',
             },
         },
-        {
-            url: '',
+        [GRILLED_DISHES_CHILD_KEY.FISH]: {
+            url: '/fish',
             crumbs: {
                 ru: 'Рыба',
             },
@@ -45,8 +54,8 @@ export const GRILLED_DISHES: RouteParams = {
                 ru: 'Рыба',
             },
         },
-        {
-            url: '',
+        [GRILLED_DISHES_CHILD_KEY.MUSHROOMS]: {
+            url: '/mushrooms',
             crumbs: {
                 ru: 'Грибы',
             },
@@ -54,8 +63,8 @@ export const GRILLED_DISHES: RouteParams = {
                 ru: 'Грибы',
             },
         },
-        {
-            url: '',
+        [GRILLED_DISHES_CHILD_KEY.VEGETABLES]: {
+            url: '/vegetables',
             crumbs: {
                 ru: 'Овощи',
             },
@@ -63,5 +72,5 @@ export const GRILLED_DISHES: RouteParams = {
                 ru: 'Овощи',
             },
         },
-    ],
+    },
 };

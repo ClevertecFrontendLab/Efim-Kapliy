@@ -1,6 +1,14 @@
-import { RouteParams } from '~/types/routes';
+import { ParentRouteParams } from '~/types/routes';
 
-export const FIRST_COURSES: RouteParams = {
+export enum FIRST_COURSES_CHILD_KEY {
+    MEAT_SOUPS = 'MEAT_SOUPS',
+    VEGETABLE_SOUPS = 'VEGETABLE_SOUPS',
+    BROTHS = 'BROTHS',
+    COLD_SOUPS = 'COLD_SOUPS',
+    DIET_SOUPS = 'DIET_SOUPS',
+}
+
+export const FIRST_COURSES: ParentRouteParams<FIRST_COURSES_CHILD_KEY> = {
     url: '/first-courses',
     crumbs: {
         ru: 'Первые блюда',
@@ -8,9 +16,9 @@ export const FIRST_COURSES: RouteParams = {
     nameInMenu: {
         ru: 'Первые блюда',
     },
-    children: [
-        {
-            url: '',
+    children: {
+        [FIRST_COURSES_CHILD_KEY.MEAT_SOUPS]: {
+            url: '/meat-soups',
             crumbs: {
                 ru: 'Мясные супы',
             },
@@ -18,8 +26,8 @@ export const FIRST_COURSES: RouteParams = {
                 ru: 'Мясные супы',
             },
         },
-        {
-            url: '',
+        [FIRST_COURSES_CHILD_KEY.VEGETABLE_SOUPS]: {
+            url: '/vegetable-soups',
             crumbs: {
                 ru: 'Овощные супы',
             },
@@ -27,8 +35,8 @@ export const FIRST_COURSES: RouteParams = {
                 ru: 'Овощные супы',
             },
         },
-        {
-            url: '',
+        [FIRST_COURSES_CHILD_KEY.BROTHS]: {
+            url: '/broths',
             crumbs: {
                 ru: 'Бульоны',
             },
@@ -36,8 +44,8 @@ export const FIRST_COURSES: RouteParams = {
                 ru: 'Бульоны',
             },
         },
-        {
-            url: '',
+        [FIRST_COURSES_CHILD_KEY.COLD_SOUPS]: {
+            url: '/cold-soups',
             crumbs: {
                 ru: 'Холодные супы',
             },
@@ -45,8 +53,8 @@ export const FIRST_COURSES: RouteParams = {
                 ru: 'Холодные супы',
             },
         },
-        {
-            url: '',
+        [FIRST_COURSES_CHILD_KEY.DIET_SOUPS]: {
+            url: '/diet-soups',
             crumbs: {
                 ru: 'Диетические супы',
             },
@@ -54,5 +62,5 @@ export const FIRST_COURSES: RouteParams = {
                 ru: 'Диетические супы',
             },
         },
-    ],
+    },
 };

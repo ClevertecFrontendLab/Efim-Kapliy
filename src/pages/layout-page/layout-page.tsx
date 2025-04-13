@@ -1,8 +1,10 @@
 import { Outlet } from 'react-router';
 
+import { Header } from '~/components/base-layout/header';
+
 export const LayoutPage = () => (
     <>
-        <div>Layout</div>
+        <Header />
         <main>
             <Outlet />
         </main>

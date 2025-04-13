@@ -1,6 +1,17 @@
-import { RouteParams } from '~/types/routes';
+import { ParentRouteParams } from '~/types/routes';
 
-export const HOMEMADE_PREPARATIONS: RouteParams = {
+export enum HOMEMADE_PREPARATIONS_CHILD_KEY {
+    MEAT_PREPARATIONS = 'MEAT_PREPARATIONS',
+    FISH_PREPARATIONS = 'FISH_PREPARATIONS',
+    FROM_CUCUMBERS = 'FROM_CUCUMBERS',
+    FROM_TOMATOES = 'FROM_TOMATOES',
+    FROM_MUSHROOMS = 'FROM_MUSHROOMS',
+    VEGETABLE_PREPARATIONS = 'VEGETABLE_PREPARATIONS',
+    SALADS_AND_CAVIAR = 'SALADS_AND_CAVIAR',
+    FROM_FRUITS_AND_BERRIES = 'FROM_FRUITS_AND_BERRIES',
+}
+
+export const HOMEMADE_PREPARATIONS: ParentRouteParams<HOMEMADE_PREPARATIONS_CHILD_KEY> = {
     url: '/homemade-preparations',
     crumbs: {
         ru: 'Домашние заготовки',
@@ -8,9 +19,9 @@ export const HOMEMADE_PREPARATIONS: RouteParams = {
     nameInMenu: {
         ru: 'Домашние заготовки',
     },
-    children: [
-        {
-            url: '',
+    children: {
+        [HOMEMADE_PREPARATIONS_CHILD_KEY.MEAT_PREPARATIONS]: {
+            url: '/meat-preparations',
             crumbs: {
                 ru: 'Мясные заготовки',
             },
@@ -18,8 +29,8 @@ export const HOMEMADE_PREPARATIONS: RouteParams = {
                 ru: 'Мясные заготовки',
             },
         },
-        {
-            url: '',
+        [HOMEMADE_PREPARATIONS_CHILD_KEY.FISH_PREPARATIONS]: {
+            url: '/fish-preparations',
             crumbs: {
                 ru: 'Рыбные заготовки',
             },
@@ -27,8 +38,8 @@ export const HOMEMADE_PREPARATIONS: RouteParams = {
                 ru: 'Рыбные заготовки',
             },
         },
-        {
-            url: '',
+        [HOMEMADE_PREPARATIONS_CHILD_KEY.FROM_CUCUMBERS]: {
+            url: '/from-cucumbers',
             crumbs: {
                 ru: 'Из огурцов',
             },
@@ -36,8 +47,8 @@ export const HOMEMADE_PREPARATIONS: RouteParams = {
                 ru: 'Из огурцов',
             },
         },
-        {
-            url: '',
+        [HOMEMADE_PREPARATIONS_CHILD_KEY.FROM_TOMATOES]: {
+            url: '/from-tomatoes',
             crumbs: {
                 ru: 'Из томатов',
             },
@@ -45,8 +56,8 @@ export const HOMEMADE_PREPARATIONS: RouteParams = {
                 ru: 'Из томатов',
             },
         },
-        {
-            url: '',
+        [HOMEMADE_PREPARATIONS_CHILD_KEY.FROM_MUSHROOMS]: {
+            url: '/from-mushrooms',
             crumbs: {
                 ru: 'Из грибов',
             },
@@ -54,8 +65,8 @@ export const HOMEMADE_PREPARATIONS: RouteParams = {
                 ru: 'Из грибов',
             },
         },
-        {
-            url: '',
+        [HOMEMADE_PREPARATIONS_CHILD_KEY.VEGETABLE_PREPARATIONS]: {
+            url: '/vegetable-preparations',
             crumbs: {
                 ru: 'Овощные заготовки',
             },
@@ -63,8 +74,8 @@ export const HOMEMADE_PREPARATIONS: RouteParams = {
                 ru: 'Овощные заготовки',
             },
         },
-        {
-            url: '',
+        [HOMEMADE_PREPARATIONS_CHILD_KEY.SALADS_AND_CAVIAR]: {
+            url: '/salads-and-caviar',
             crumbs: {
                 ru: 'Салаты, икра',
             },
@@ -72,8 +83,8 @@ export const HOMEMADE_PREPARATIONS: RouteParams = {
                 ru: 'Салаты, икра',
             },
         },
-        {
-            url: '',
+        [HOMEMADE_PREPARATIONS_CHILD_KEY.FROM_FRUITS_AND_BERRIES]: {
+            url: '/from-fruits-and-berries',
             crumbs: {
                 ru: 'Из фруктов и ягод',
             },
@@ -81,5 +92,5 @@ export const HOMEMADE_PREPARATIONS: RouteParams = {
                 ru: 'Из фруктов и ягод',
             },
         },
-    ],
+    },
 };

@@ -1,6 +1,18 @@
-import { RouteParams } from '~/types/routes';
+import { ParentRouteParams } from '~/types/routes';
 
-export const DRINKS: RouteParams = {
+export enum DRINKS_CHILD_KEY {
+    JUICES_AND_FRESH = 'JUICES_AND_FRESH',
+    SMOOTHIE = 'SMOOTHIE',
+    COMPOTES = 'COMPOTES',
+    KISSELS = 'KISSELS',
+    COFFEE = 'COFFEE',
+    MEDICINAL_TEA = 'MEDICINAL_TEA',
+    KVASS = 'KVASS',
+    COCKTAILS = 'COCKTAILS',
+    ALCOHOL = 'ALCOHOL',
+}
+
+export const DRINKS: ParentRouteParams<DRINKS_CHILD_KEY> = {
     url: '/drinks',
     crumbs: {
         ru: 'Напитки',
@@ -8,9 +20,9 @@ export const DRINKS: RouteParams = {
     nameInMenu: {
         ru: 'Напитки',
     },
-    children: [
-        {
-            url: '',
+    children: {
+        [DRINKS_CHILD_KEY.JUICES_AND_FRESH]: {
+            url: '/juices-and-fresh',
             crumbs: {
                 ru: 'Соки и фреши',
             },
@@ -18,8 +30,8 @@ export const DRINKS: RouteParams = {
                 ru: 'Соки и фреши',
             },
         },
-        {
-            url: '',
+        [DRINKS_CHILD_KEY.SMOOTHIE]: {
+            url: '/smoothie',
             crumbs: {
                 ru: 'Смузи',
             },
@@ -27,8 +39,8 @@ export const DRINKS: RouteParams = {
                 ru: 'Смузи',
             },
         },
-        {
-            url: '',
+        [DRINKS_CHILD_KEY.COMPOTES]: {
+            url: '/compotes',
             crumbs: {
                 ru: 'Компоты',
             },
@@ -36,8 +48,8 @@ export const DRINKS: RouteParams = {
                 ru: 'Компоты',
             },
         },
-        {
-            url: '',
+        [DRINKS_CHILD_KEY.KISSELS]: {
+            url: '/kissels',
             crumbs: {
                 ru: 'Кисели',
             },
@@ -45,8 +57,8 @@ export const DRINKS: RouteParams = {
                 ru: 'Кисели',
             },
         },
-        {
-            url: '',
+        [DRINKS_CHILD_KEY.COFFEE]: {
+            url: '/coffee',
             crumbs: {
                 ru: 'Кофе',
             },
@@ -54,8 +66,8 @@ export const DRINKS: RouteParams = {
                 ru: 'Кофе',
             },
         },
-        {
-            url: '',
+        [DRINKS_CHILD_KEY.MEDICINAL_TEA]: {
+            url: '/medicinal-tea',
             crumbs: {
                 ru: 'Лечебный чай',
             },
@@ -63,8 +75,8 @@ export const DRINKS: RouteParams = {
                 ru: 'Лечебный чай',
             },
         },
-        {
-            url: '',
+        [DRINKS_CHILD_KEY.KVASS]: {
+            url: '/kvass',
             crumbs: {
                 ru: 'Квас',
             },
@@ -72,8 +84,8 @@ export const DRINKS: RouteParams = {
                 ru: 'Квас',
             },
         },
-        {
-            url: '',
+        [DRINKS_CHILD_KEY.COCKTAILS]: {
+            url: '/cocktails',
             crumbs: {
                 ru: 'Коктейли',
             },
@@ -81,8 +93,8 @@ export const DRINKS: RouteParams = {
                 ru: 'Коктейли',
             },
         },
-        {
-            url: '',
+        [DRINKS_CHILD_KEY.ALCOHOL]: {
+            url: '/alcohol',
             crumbs: {
                 ru: 'Алкогольные',
             },
@@ -90,5 +102,5 @@ export const DRINKS: RouteParams = {
                 ru: 'Алкогольные',
             },
         },
-    ],
+    },
 };

@@ -1,4 +1,4 @@
-import { RouteKeys, RouteParams } from '~/types/routes';
+import { RouteParams } from '~/types/routes';
 
 import { CHILDREN_DISHES } from './blocks/children-dishes';
 import { DESSERT_AND_PASTRIES } from './blocks/desserts-and-pastries';
@@ -15,7 +15,7 @@ import { THERAPEUTIC_NUTRITION } from './blocks/therapeutic-nutrition';
 import { VEGAN_CUISINE } from './blocks/vegan-cuisine';
 import { JUICIEST } from './other/juiciest';
 
-export const ROUTES: Record<RouteKeys, RouteParams> = {
+export const ROUTES: RouteParams = {
     LAYOUT: {
         url: '/',
         crumbs: {
